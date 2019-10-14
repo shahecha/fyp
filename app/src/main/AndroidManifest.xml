@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.example.foodrecommendation">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <dist:module dist:instant="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".test"></activity>
+        <activity android:name=".suggestedgout" />
+        <activity android:name=".Illness" />
+        <activity android:name=".Introgout" />
+        <activity android:name=".introdiabetes" />
+        <activity android:name=".Introhc" />
+        <activity android:name=".Introbp" />
+        <activity android:name=".Symptom" />
+        <activity android:name=".Food" />
+        <activity android:name=".Introduction" />
+        <activity android:name=".Tipsbp" />
+        <activity android:name=".Tipsgout" />
+        <activity android:name=".tipsdiabetes" />
+        <activity android:name=".Tipscholestrol" />
+        <activity android:name=".Tips" />
+        <activity android:name=".Mainpage" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

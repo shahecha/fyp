@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Introduction"
+    android:background="@drawable/new_login_gradients">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="689dp"
+            android:layout_height="217dp"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:src="@drawable/logo3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.482" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="THINGS TO KNOW ABOUT "
+            android:textColor="#FFFF"
+            android:textStyle="bold"
+            android:textSize="23sp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="HYPERTENSION"
+            android:textColor="#FFFF"
+            android:textStyle="bold"
+            android:textSize="23sp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:text="Hypertension or better known as high blood pressure is a chronic disease that requires ongoing medical treatment, diet and exercise by the patient."
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="#8a3324"/>
+
+
+                <TextView
+                    android:id="@+id/txt4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="Blood pressure is high when readings exceed 140 / 90mmHg. The optimum reading is 120 / 80mmHg"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="#8a3324"/>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="258dp"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/bpcauses"
+                    tools:ignore="DuplicateIds" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="226dp"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/bprisk" />
+
+                <TextView
+                    android:id="@+id/txt44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:text="In the year of 2015, about 30.3% of Malaysians aged 18 years and above were hypertension sufferers while 17.2% of Malaysians 18 and above facing silent hypertension"
+                    android:textSize="20sp"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:background="#8a3324"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>
