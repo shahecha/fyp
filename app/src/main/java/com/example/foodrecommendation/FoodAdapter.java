@@ -66,7 +66,7 @@ public class FoodAdapter extends ArrayAdapter<foodconst> {
             }
 
             holder.title.setText(foods.get(position).getTitle());
-            holder.title.setText(foods.get(position).getDesc());
+            holder.desc.setText(foods.get(position).getDesc());
             Picasso.get().load(foods.get(position).getImage()).into(holder.image);
         }
             catch (Exception e){
