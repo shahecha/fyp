@@ -19,7 +19,7 @@
             android:layout_marginTop="32dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
 
@@ -44,15 +44,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="INTRODUCTION ABOUT ILLNESS"
+            android:text="INFORMATION ABOUT ILLNESS"
             android:textColor="#FFFF"
             android:textStyle="bold"
             android:textSize="23sp" />
 
         <GridLayout
-            android:columnCount="2"
+            android:columnCount="1"
             android:rowCount="6"
-            android:alignmentMode="alignMargins"
             android:columnOrderPreserved="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -77,7 +76,7 @@
                     <ImageView
                         android:src="@drawable/hbp"
                         android:layout_width="100dp"
-                        android:layout_height="95dp"/>
+                        android:layout_height="95dp" />
 
 
                     <TextView

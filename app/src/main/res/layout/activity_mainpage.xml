@@ -74,45 +74,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="INTRODUCTION"
+                        android:text="INFORMATION ILLNESS"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:layout_margin="28dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_marginTop="5dp">
-
-                <LinearLayout
-                    android:id="@+id/foodBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/picture10" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="FOOD RECOMMENDATION"
-                        android:textColor="#000000"
-                        android:textSize="16sp" />
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="wrap_content"
@@ -146,6 +114,39 @@
                         android:textSize="16sp" />
 
                 </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="28dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:id="@+id/foodBtn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="5dp">
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/picture10" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FOOD RECOMMENDATION"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
             </androidx.cardview.widget.CardView>
 
         </GridLayout>

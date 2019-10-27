@@ -28,26 +28,18 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.482" />
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_width="267dp"
+            android:layout_height="44dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:text="THINGS TO KNOW ABOUT "
-            android:textColor="#FFFF"
-            android:textSize="23sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:text="DIABETES "
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            android:textSize="23sp" />
+            android:background="@drawable/background_login"
+            android:text="DIABETES INFO"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -67,92 +59,18 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="30dp"
-                    android:background="#8a3324"
                     android:textColor="#FFFFFF"
                     android:text="Diabetes is a condition in which sugar levels in blood are high than normal. Diabetes occurs when the pancreas is no longer producing insulin or the body cannot effectively use insulin."
                     android:textSize="20sp"
                     android:textStyle="bold"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="Details below are normal level of blood sugar that diabetes patients need to gain:     "
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:background="#8a3324"
-                    android:text="Fasting Blood Sugar(FBS):4.4-6.0 mmol/L             "
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:textSize="19sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:background="#8a3324"
-                    android:text="Random Blood Sugar(RBS):4.4-8.5 mmol/L               "
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:textSize="19sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="1dp"
-                    android:background="#8a3324"
-                    android:text="Hemoglobin bA1c: 6.5% and below                   "
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:textSize="19sp" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="185dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/dcauses"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:id="@+id/txt4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:text="The foods we eat turn to sugar in our body. Insulin helps blood sugar enter the cells and tissues to provide energy.
-When insulin is depleted, sugar cannot enter the cells and tissues, so the sugar level in the body increases.
-"
-                    android:textSize="20sp"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:background="#8a3324"/>
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="258dp"
                     android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/diabetesrisk" />
-
-                <TextView
-                    android:id="@+id/txt44"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:text="The statistics of diabetic sufferers are increased from 15.2% in 2011, to 17.5% in 2015."
-                    android:textSize="20sp"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:background="#8a3324"/>
-
-
+                    app:srcCompat="@drawable/diabetesinfo"
+                    tools:ignore="DuplicateIds" />
 
 
             </LinearLayout>

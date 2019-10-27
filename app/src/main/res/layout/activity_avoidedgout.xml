@@ -3,15 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".suggestedgout"
+    tools:context=".avoidedgout"
     android:background="@drawable/new_login_gradients">
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="SUGGESTED FOOD FOR GOUT"
+            android:text="AVOIDED FOOD FOR GOUT "
             android:textColor="#FFFF"
             android:textStyle="bold"
             android:textSize="22sp" />
@@ -48,28 +48,44 @@
 
 
         <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:fillViewport="true">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:columnCount="1"
+                android:rowCount="6">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="28dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
 
                 <ListView
                     android:id="@+id/listView"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="633dp" />
 
-
-
-
             </LinearLayout>
-        </ScrollView>
+            </androidx.cardview.widget.CardView>
 
+            </GridLayout>
+    </ScrollView>
     </LinearLayout>
-
-</LinearLayout>
+    </LinearLayout>

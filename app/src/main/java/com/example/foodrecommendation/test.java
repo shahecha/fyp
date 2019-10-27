@@ -156,7 +156,7 @@ public class test extends AppCompatActivity {
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
 
-        FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").addValueEventListener(new ValueEventListener(){
+        FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("fat").addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                 if(dataSnapshot.exists()){
@@ -165,9 +165,15 @@ public class test extends AppCompatActivity {
                         if(dataSnapshot1.exists()){
                             for(DataSnapshot dataSnapshot2 : dataSnapshot1.getChildren()){
                                 if (dataSnapshot2.exists()) {
-                                    foodconst fc = dataSnapshot2.getValue(foodconst.class);
-                                    snapshotListData.add(fc);
-                                    adapterFood.notifyDataSetChanged();
+                                    for(DataSnapshot dataSnapshot3 : dataSnapshot2.getChildren()){
+                                        if (dataSnapshot3.exists()){
+                                            foodconst fc = dataSnapshot3.getValue(foodconst.class);
+                                            snapshotListData.add(fc);
+                                            adapterFood.notifyDataSetChanged();
+                                        }
+
+                                    }
+
 
                                 }
                             }
@@ -187,37 +193,6 @@ public class test extends AppCompatActivity {
 
         lv = (ListView) findViewById(R.id.listView);
 
-        //Log.d("test",snapshotListData.toString());
-
-
-
-
-        /*query =  FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("fat");
-
-        final FirebaseListOptions<foodconst> options = new FirebaseListOptions.Builder<foodconst>()
-                .setLayout(R.layout.fooddetails)
-                .setQuery(query, foodconst.class)
-                .build();
-
-        adapter = new FirebaseListAdapter(options) {
-            @Override
-            protected void populateView(@NonNull View v, @NonNull Object model, int position) {
-                final TextView title = v.findViewById(R.id.title);
-                final TextView desc = v.findViewById(R.id.desc);
-                final ImageView image = v.findViewById(R.id.imageView);
-
-                foodconst goutModel = (foodconst)model;
-
-                for(int i=0;i<goutModel.getFoods().size();i++){
-                    foodconst fc = (foodconst)goutModel.getFood(i);
-                    title.setText("Title:" + fc.getTitle());
-                    desc.setText("Decsription:" + fc.getDesc());
-                    Picasso.get().load(fc.getImage()).into(image);
-                }
-
-            }
-
-        };*/
 
         adapterFood = new FoodAdapter(this,0,snapshotListData);
         lv.setAdapter(adapterFood);

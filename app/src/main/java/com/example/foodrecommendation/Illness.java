@@ -44,17 +44,17 @@ public class Illness extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView< ? > parent, View view, int position, long id) {
                 if (position == 0) {
-                    listItems=new String[]{"Food Should be Taken","Food Should be Avoided"};
+                    listItems=new String[]{"Suggested food","Avoided food"};
                     AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
                     mBuilder.setTitle("Choose Food Recommendation for Gout");
                     mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             if(i==0)
-                            { Intent j = new Intent(Illness.this,test.class);
+                            { Intent j = new Intent(Illness.this,suggestedgout.class);
                                 startActivity(j);}
                             if(i==1)
-                            { Intent j = new Intent(Illness.this,Food.class);
+                            { Intent j = new Intent(Illness.this,avoidedgout.class);
                                 startActivity(j);}
                         }
                     });

@@ -39,7 +39,7 @@
             android:text="DIABETES TIPS"
             android:textAllCaps="false"
             android:textColor="#000000"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <ScrollView
@@ -57,112 +57,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:background="#8a3324"
-                    android:text="To reduce diabetes, patients needs to:         "
+                    android:text=" Here are some tips that might help to control the diabetes."
                     android:textStyle="bold"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="1. Make sure you don't skip meals. Take 3 main dishes a day (breakfast, lunch, dinner). Eat at regular intervals."
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="2. Snacks are taken between the main meal times to prevent hypoglycemia (low blood sugar level 2.2-4.4mmol/L)."
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="3. Carbohydrate foods need to be measured and distributed so the total intake will not excessive. "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="4. Reduce simple carbohydrate intake and avoid the unnecessary intake."
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="223dp"
-                    android:layout_marginTop="12dp"
-                    app:srcCompat="@drawable/carbo"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="5. Diversify your type of food and practice a balanced diet."
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="6. Increase fiber intake.                                     "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="209dp"
-                    android:layout_marginTop="12dp"
-                    app:srcCompat="@drawable/fiberdiabetes"
+                    android:layout_height="258dp"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/diabetestips"
                     tools:ignore="DuplicateIds" />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="7. Do some exercise.                                          "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="8. Take medicine and insulin at the appointed time."
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
 
 
 
