@@ -6,7 +6,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    tools:context=".suggestedgout"
+    tools:context=".suggesteddiabetes"
     android:background="@drawable/new_login_gradients">
 
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:text="SUGGESTED FOOD FOR GOUT"
+            android:text="SUGGESTED FOOD FOR DIABETES"
             android:textColor="#FFFF"
             android:textStyle="bold"
             android:textSize="22sp" />

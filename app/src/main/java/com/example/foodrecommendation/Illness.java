@@ -23,8 +23,8 @@ import android.widget.TextView;
 public class Illness extends AppCompatActivity {
 
     ListView listView;
-    String mTitle[] = {"GOUT", "HYPERLIPIDEMIA", "DIABETES","HYPERTENSION" };
-    int images[] = { R.drawable.gout, R.drawable.highcholestrol, R.drawable.diabetes,R.drawable.hbp};
+    String mTitle[] = {"DIABETES","HYPERTENSION","HYPERLIPIDEMIA","GOUT"};
+    int images[] = { R.drawable.diabetes, R.drawable.hbp, R.drawable.highcholestrol,R.drawable.gout};
 
    //radio button list
     String[] listItems;
@@ -46,15 +46,15 @@ public class Illness extends AppCompatActivity {
                 if (position == 0) {
                     listItems=new String[]{"Suggested food","Avoided food"};
                     AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                    mBuilder.setTitle("Choose Food Recommendation for Gout");
+                    mBuilder.setTitle("Choose Food Recommendation for Diabetes");
                     mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             if(i==0)
-                            { Intent j = new Intent(Illness.this,suggestedgout.class);
+                            { Intent j = new Intent(Illness.this,suggesteddiabetes.class);
                                 startActivity(j);}
                             if(i==1)
-                            { Intent j = new Intent(Illness.this,avoidedgout.class);
+                            { Intent j = new Intent(Illness.this,avoideddiabetes.class);
                                 startActivity(j);}
                         }
                     });
@@ -69,17 +69,17 @@ public class Illness extends AppCompatActivity {
                     mDialog.show();
                 }
                 if (position == 1) {
-                    listItems=new String[]{"Food Should be Taken","Food Should be Avoided"};
+                    listItems=new String[]{"Suggested food","Avoided food"};
                     AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                    mBuilder.setTitle("Choose Food Recommendation");
+                    mBuilder.setTitle("Choose Food Recommendation for Hypertension");
                     mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             if(i==0)
-                            { Intent j = new Intent(Illness.this,test.class);
+                            { Intent j = new Intent(Illness.this,suggestedhypertension.class);
                                 startActivity(j);}
                             if(i==1)
-                            { Intent j = new Intent(Illness.this,Tips.class);
+                            { Intent j = new Intent(Illness.this,avoidedhypertension.class);
                                 startActivity(j);}
 
                         }
@@ -96,17 +96,17 @@ public class Illness extends AppCompatActivity {
 
                 }
                 if (position == 2) {
-                    listItems=new String[]{"Food Should be Taken","Food Should be Avoided"};
+                    listItems=new String[]{"Suggested food","Avoided food"};
                     AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                    mBuilder.setTitle("Choose Food Recommendation");
+                    mBuilder.setTitle("Choose Food Recommendation for Hyperlipidemia");
                     mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             if(i==0)
-                            { Intent j = new Intent(Illness.this,Tips.class);
+                            { Intent j = new Intent(Illness.this,suggestedgout.class);
                                 startActivity(j);}
                             if(i==1)
-                            { Intent j = new Intent(Illness.this,Tips.class);
+                            { Intent j = new Intent(Illness.this,avoidedgout.class);
                                 startActivity(j);}
 
                         }
@@ -122,17 +122,17 @@ public class Illness extends AppCompatActivity {
                     mDialog.show();
                 }
                 if (position == 3) {
-                    listItems=new String[]{"Food Should be Taken","Food Should be Avoided"};
+                    listItems=new String[]{"Suggested food","Avoided food"};
                     AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                    mBuilder.setTitle("Choose Food Recommendation");
+                    mBuilder.setTitle("Choose Food Recommendation for Gout");
                     mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             if(i==0)
-                            { Intent j = new Intent(Illness.this,Tips.class);
+                            { Intent j = new Intent(Illness.this,suggestedgout.class);
                                 startActivity(j);}
                             if(i==1)
-                            { Intent j = new Intent(Illness.this,Tips.class);
+                            { Intent j = new Intent(Illness.this,avoidedgout.class);
                                 startActivity(j);}
 
                         }

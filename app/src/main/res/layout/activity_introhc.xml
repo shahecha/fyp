@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="689dp"
-            android:layout_height="217dp"
+            android:layout_width="670dp"
+            android:layout_height="160dp"
             android:layout_gravity="center"
             android:padding="16dp"
             android:src="@drawable/logo3"
@@ -29,26 +29,18 @@
             app:layout_constraintVertical_bias="0.482" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <Button
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_width="267dp"
+            android:layout_height="44dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="THINGS TO KNOW ABOUT "
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            android:textSize="23sp" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:text="HYPERLIPIDEMIA"
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            android:textSize="23sp" />
+            android:layout_marginTop="40dp"
+            android:background="@drawable/background_login"
+            android:text="HYPERLIPIDEMIA INFO"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -61,48 +53,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txt2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:text="Hyperlipidemia or known as high cholestrol is a blood-level imbalance categorized as high cholesterol (TC), high triglyceride (TG), high Low Density Lipopotein (LDL) or low High Density Lipoprotein (HDL) that contributes to atherosclerosis which plaque builds up inside your arteries."
-                    android:textSize="20sp"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:background="#8a3324"/>
+                <!--  <com.zolad.zoominimageview.ZoomInImageView
+                              android:layout_width="match_parent"
+                              android:layout_height="223dp"
+                              android:src="@drawable/bptips"/> -->
 
-                <ImageView
+                <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
                     android:layout_width="match_parent"
-                    android:layout_height="198dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/hcread2"
-                    tools:ignore="DuplicateIds" />
-
-
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="226dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/hccauses" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="226dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/hcrisk" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:text="The Malaysian National Health and Morbidity Survey which monitors NCD risk factors, uncover 6.2 million which 25% of adults age eighteen years and above are victims of the high amount in cholesterol."
-                    android:textSize="20sp"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold"
-                    android:background="#8a3324"/>
+                    android:layout_height="223dp"
+                    app:src="@drawable/hcinfo"/>
 
 
 

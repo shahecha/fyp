@@ -17,8 +17,8 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="689dp"
-                android:layout_height="217dp"
+                android:layout_width="670dp"
+                android:layout_height="160dp"
                 android:layout_gravity="center"
                 android:padding="16dp"
                 android:src="@drawable/logo3"
@@ -66,7 +66,7 @@
                     android:padding="5dp">
 
                     <ImageView
-                        android:layout_width="84dp"
+                        android:layout_width="74dp"
                         android:layout_height="90dp"
                         android:src="@drawable/picture8" />
 
@@ -101,7 +101,7 @@
                     android:padding="5dp">
 
                     <ImageView
-                        android:layout_width="80dp"
+                        android:layout_width="130dp"
                         android:layout_height="80dp"
                         android:src="@drawable/picture7" />
 
@@ -109,7 +109,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TIPS TO CONTROL COMMON ILLNESS"
+                        android:text="TIPS TO CONTROL ILLNESS"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
@@ -135,9 +135,9 @@
                 android:padding="5dp">
 
                 <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="130dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/picture10" />
+                    android:src="@drawable/picture1" />
 
                 <TextView
                     android:layout_width="wrap_content"

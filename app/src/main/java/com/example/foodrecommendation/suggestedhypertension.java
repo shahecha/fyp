@@ -32,28 +32,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class suggestedgout extends AppCompatActivity {
+public class suggestedhypertension extends AppCompatActivity {
 
+    Button btn_sub;
     Button button;
     ListView lv;
     FirebaseListAdapter adapter;
     FoodAdapter adapterFood;
     private DatabaseReference query;
 
-    CharSequence[] items = {"Fat", "Fruits", "Vegetable", "Animal source food", "Nuts", "Grains"};
-    boolean[] selectedItems = {false, false, false, false, false, false};
+    CharSequence[] items = {"Grains", "Fruits", "Vegetable", "Protein", "Legume", "Dairy","Sugar","Others"};
+    boolean[] selectedItems = {false, false, false, false, false, false, false, false};
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_suggestedgout);
+        setContentView(R.layout.activity_suggestedhypertension);
+
+        btn_sub=(Button)findViewById(R.id.buttonguidefood);
+        btn_sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(suggestedhypertension.this,Popsugestedhypertension.class);
+                startActivity(i);
+            }
+        });
 
         button = findViewById(R.id.buttonfilter);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(suggestedgout.this);
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(suggestedhypertension.this);
                 alertDialogBuilder.setCancelable(true);
                 alertDialogBuilder.setTitle("Select Food Category");
                 alertDialogBuilder.setMultiChoiceItems(items, selectedItems, new DialogInterface.OnMultiChoiceClickListener() {
@@ -156,7 +166,7 @@ public class suggestedgout extends AppCompatActivity {
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
 
-        FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").addValueEventListener(new ValueEventListener(){
+        FirebaseDatabase.getInstance().getReference().child("hipertension").child("suggested").addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                 if(dataSnapshot.exists()){

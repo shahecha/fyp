@@ -49,7 +49,7 @@ public class avoidedgout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avoidedgout);
 
-        button = findViewById(R.id.button);
+        button = findViewById(R.id.buttonfilter);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

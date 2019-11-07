@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="689dp"
-            android:layout_height="217dp"
+            android:layout_width="670dp"
+            android:layout_height="162dp"
             android:layout_gravity="center"
             android:padding="16dp"
             android:src="@drawable/logo3"
@@ -34,7 +34,7 @@
             android:layout_width="267dp"
             android:layout_height="44dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/background_login"
             android:text="DIABETES TIPS"
             android:textAllCaps="false"
@@ -57,23 +57,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:text=" Here are some tips that might help to control the diabetes."
+                    android:text=" Here are some tips that might help to control diabetes."
                     android:textStyle="bold"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
+                 <com.zolad.zoominimageview.ZoomInImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="223dp"
+                        android:src="@drawable/diabetestips"/>
 
-                <ImageView
+                <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
                     android:layout_width="match_parent"
-                    android:layout_height="258dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/diabetestips"
-                    tools:ignore="DuplicateIds" />
-
-
-
-
-
+                    android:layout_height="223dp"
+                    app:src="@drawable/diabetestips"/>
 
 
 

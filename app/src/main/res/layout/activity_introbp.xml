@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="689dp"
-            android:layout_height="217dp"
+            android:layout_width="670dp"
+            android:layout_height="160dp"
             android:layout_gravity="center"
             android:padding="16dp"
             android:src="@drawable/logo3"
@@ -33,7 +33,7 @@
             android:layout_width="267dp"
             android:layout_height="44dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="40dp"
             android:background="@drawable/background_login"
             android:text="HYPERTENSION INFO"
             android:textAllCaps="false"
@@ -52,23 +52,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txt2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="30dp"
-                    android:text="Hypertension or better known as high blood pressure is a chronic disease that requires ongoing medical treatment, diet and exercise by the patient."
-                    android:textSize="20sp"
-                    android:textColor="#FFFFFF"
-                    android:textStyle="bold" />
+                <!--  <com.zolad.zoominimageview.ZoomInImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="223dp"
+                   android:src="@drawable/bptips"/> -->
 
-                <ImageView
+                <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
                     android:layout_width="match_parent"
-                    android:layout_height="258dp"
-                    android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/bpinfo"
-                    tools:ignore="DuplicateIds" />
+                    android:layout_height="223dp"
+                    app:src="@drawable/bpinfo"/>
 
 
             </LinearLayout>

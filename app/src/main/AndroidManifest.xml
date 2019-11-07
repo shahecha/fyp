@@ -4,6 +4,8 @@
     package="com.example.foodrecommendation">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <dist:module dist:instant="true" />
 
@@ -14,15 +16,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".avoidedgout"></activity>
-        <activity android:name=".test" />
+        <activity android:name=".Popsugestedhypertension"
+            android:theme="@style/AppTheme.PopMe">></activity>
+        <activity
+            android:name=".Popsugesteddiabetes"
+            android:theme="@style/AppTheme.PopMe"></activity>
+        <activity android:name=".avoidedhypertension" />
+        <activity android:name=".suggestedhypertension" />
+        <activity android:name=".avoideddiabetes" />
+        <activity android:name=".suggesteddiabetes" />
+        <activity android:name=".avoidedgout" />
         <activity android:name=".suggestedgout" />
         <activity android:name=".Illness" />
         <activity android:name=".Introgout" />
         <activity android:name=".introdiabetes" />
         <activity android:name=".Introhc" />
         <activity android:name=".Introbp" />
-        <activity android:name=".Symptom" />
         <activity android:name=".Food" />
         <activity android:name=".Introduction" />
         <activity android:name=".Tipsbp" />

@@ -32,7 +32,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class test extends AppCompatActivity {
+public class avoideddiabetes extends AppCompatActivity {
+
 
     Button button;
     ListView lv;
@@ -40,20 +41,22 @@ public class test extends AppCompatActivity {
     FoodAdapter adapterFood;
     private DatabaseReference query;
 
-    CharSequence[] items = {"Fat", "Fruits", "Vegetable", "Animal source food", "Nuts", "Grains"};
-    boolean[] selectedItems = {false, false, false, false, false, false};
+    CharSequence[] items = {"Vegetable", "Fat", "Sugar"};
+    boolean[] selectedItems = { false, false, false};
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food);
+        setContentView(R.layout.activity_avoideddiabetes);
 
-        button = findViewById(R.id.button);
+
+
+        button = findViewById(R.id.buttonfilter);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(test.this);
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(avoideddiabetes.this);
                 alertDialogBuilder.setCancelable(true);
                 alertDialogBuilder.setTitle("Select Food Category");
                 alertDialogBuilder.setMultiChoiceItems(items, selectedItems, new DialogInterface.OnMultiChoiceClickListener() {
@@ -156,7 +159,7 @@ public class test extends AppCompatActivity {
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
 
-        FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("fat").addValueEventListener(new ValueEventListener(){
+        FirebaseDatabase.getInstance().getReference().child("diabetes").child("avoided").addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                 if(dataSnapshot.exists()){
@@ -165,13 +168,10 @@ public class test extends AppCompatActivity {
                         if(dataSnapshot1.exists()){
                             for(DataSnapshot dataSnapshot2 : dataSnapshot1.getChildren()){
                                 if (dataSnapshot2.exists()) {
-                                    for(DataSnapshot dataSnapshot3 : dataSnapshot2.getChildren()){
-                                        if (dataSnapshot3.exists()){
-                                            foodconst fc = dataSnapshot3.getValue(foodconst.class);
+                                            foodconst fc = dataSnapshot2.getValue(foodconst.class);
                                             snapshotListData.add(fc);
                                             adapterFood.notifyDataSetChanged();
                                         }
-
                                     }
 
 
@@ -180,8 +180,6 @@ public class test extends AppCompatActivity {
                         }
                     }
 
-                }
-            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {

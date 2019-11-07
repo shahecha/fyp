@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class suggestedgout extends AppCompatActivity {
+public class avoidedhypertension extends AppCompatActivity {
 
     Button button;
     ListView lv;
@@ -40,20 +40,20 @@ public class suggestedgout extends AppCompatActivity {
     FoodAdapter adapterFood;
     private DatabaseReference query;
 
-    CharSequence[] items = {"Fat", "Fruits", "Vegetable", "Animal source food", "Nuts", "Grains"};
-    boolean[] selectedItems = {false, false, false, false, false, false};
+        CharSequence[] items = {"Grains", "Fruits", "Vegetable", "Protein", "Dairy", "Fat","Others"};
+    boolean[] selectedItems = {false, false, false, false, false, false, false};
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_suggestedgout);
+        setContentView(R.layout.activity_avoidedhypertension);
 
         button = findViewById(R.id.buttonfilter);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(suggestedgout.this);
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(avoidedhypertension.this);
                 alertDialogBuilder.setCancelable(true);
                 alertDialogBuilder.setTitle("Select Food Category");
                 alertDialogBuilder.setMultiChoiceItems(items, selectedItems, new DialogInterface.OnMultiChoiceClickListener() {
@@ -156,7 +156,7 @@ public class suggestedgout extends AppCompatActivity {
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
 
-        FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").addValueEventListener(new ValueEventListener(){
+        FirebaseDatabase.getInstance().getReference().child("hipertension").child("avoided").addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                 if(dataSnapshot.exists()){

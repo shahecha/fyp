@@ -6,7 +6,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    tools:context=".suggestedgout"
+    tools:context=".avoideddiabetes"
     android:background="@drawable/new_login_gradients">
 
 
@@ -34,8 +34,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:text="SUGGESTED FOOD FOR GOUT"
+            android:layout_marginTop="10dp"
+            android:text="AVOIDED FOOD FOR DIABETES"
             android:textColor="#FFFF"
             android:textStyle="bold"
             android:textSize="22sp" />
@@ -45,20 +45,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="20dp">
-
-            <Button
-                android:id="@+id/buttonguidefood"
-                style="@style/Base.TextAppearance.AppCompat.Body1"
-                android:layout_width="250dp"
-                android:layout_height="40dp"
-                android:layout_gravity="right"
-                android:background="@drawable/background_login"
-                android:clickable="true"
-                android:padding="8dp"
-                android:text="Food Consume Guide"
-                android:textAllCaps="false"
-                android:textColor="#f16f7d"
-                android:textSize="20sp" />
 
 
             <Button
@@ -79,20 +65,23 @@
 
         </LinearLayout>
 
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             android:fillViewport="true">
 
+
+
             <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:alignmentMode="alignMargins"
-                android:columnOrderPreserved="false"
                 android:columnCount="1"
                 android:rowCount="200"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp">
+
 
 
                 <androidx.cardview.widget.CardView
