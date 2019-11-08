@@ -53,10 +53,10 @@
                 android:orientation="vertical">
 
 
-                  <com.zolad.zoominimageview.ZoomInImageView
+              <!--    <com.zolad.zoominimageview.ZoomInImageView
                                   android:layout_width="match_parent"
                                   android:layout_height="223dp"
-                                  android:src="@drawable/diabetesinfo"/>
+                                  android:src="@drawable/diabetesinfo"/> -->
 
                 <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
                     android:layout_width="match_parent"
