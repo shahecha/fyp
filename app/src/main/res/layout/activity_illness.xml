@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".Food"
+    tools:context=".Illness"
     android:background="@drawable/new_login_gradients">
 
 
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_rowWeight="1"
                 android:layout_columnWeight="1"
-                android:layout_margin="28dp"
+                android:layout_margin="10dp"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 

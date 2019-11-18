@@ -34,20 +34,53 @@ import java.util.List;
 
 public class avoidedgout extends AppCompatActivity {
 
+
     Button button;
     ListView lv;
     FirebaseListAdapter adapter;
     FoodAdapter adapterFood;
     private DatabaseReference query;
 
-    CharSequence[] items = {"Fat", "Fruits", "Vegetable", "Animal source food", "Nuts", "Grains"};
-    boolean[] selectedItems = {false, false, false, false, false, false};
+    CharSequence[] items = { "Grains", "Vegetable", "Protein", "Legume","Others"};
+    boolean[] selectedItems = { false, false, false, false,false};
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avoidedgout);
+
+        final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
+
+
+        FirebaseDatabase.getInstance().getReference().child("gout").child("avoided").addValueEventListener(new ValueEventListener(){
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
+                if(dataSnapshot.exists())
+                {
+                    for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                    {
+                        if(dataSnapshot1.exists())
+                        {
+                            for(DataSnapshot dataSnapshot2 : dataSnapshot1.getChildren())
+                            {
+                                if (dataSnapshot2.exists())
+                                {
+                                    foodconst fc = dataSnapshot2.getValue(foodconst.class);
+                                    snapshotListData.add(fc);
+                                    adapterFood.notifyDataSetChanged();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
         button = findViewById(R.id.buttonfilter);
         button.setOnClickListener(new View.OnClickListener() {
@@ -65,147 +98,141 @@ public class avoidedgout extends AppCompatActivity {
                 alertDialogBuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int which) {
-                        //letak coding retrieve yang filter
-                        if (selectedItems[0] == true) // display fat only
+                        if (selectedItems[0] == true )
                         {
-                            lv = (ListView) findViewById(R.id.listView);
-
-                            final FirebaseListOptions<foodconst> options = new FirebaseListOptions.Builder<foodconst>()
-                                    .setLayout(R.layout.fooddetails)
-                                    .setQuery(query, foodconst.class)
-                                    .build();
-
-                            adapter = new FirebaseListAdapter(options) {
+                            FirebaseDatabase.getInstance().getReference().child("gout").child("avoided").child("grains").addValueEventListener(new ValueEventListener(){
                                 @Override
-                                protected void populateView(@NonNull View v, @NonNull Object model, int position) {
-                                    final TextView title = v.findViewById(R.id.title);
-                                    final TextView desc = v.findViewById(R.id.desc);
-                                    final ImageView image = v.findViewById(R.id.imageView);
-
-                                    query.child("gout").child("suggested").child("fat").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.getValue() != null) {
-
-                                                foodconst fc = dataSnapshot.getValue(foodconst.class);
-                                                title.setText("Title:" + fc.getTitle());
-                                                desc.setText("Decsription:" + fc.getDesc());
-                                                Picasso.get().load(fc.getImage()).into(image);
-
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                                        {
+                                            if (dataSnapshot1.exists())
+                                            {
+                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
+                                                snapshotListData.add(fc);
+                                                adapterFood.notifyDataSetChanged();
                                             }
-
                                         }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    lv.setAdapter(adapter);
+                                    }
                                 }
-                            };
 
-                        } else if (selectedItems[0] == true && selectedItems[1] == true) //display fat and fruit only
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) { }
+                            });
+                        }
+                        else if (selectedItems[1] == true )
                         {
-                            lv = (ListView) findViewById(R.id.listView);
-
-                            final FirebaseListOptions<foodconst> options = new FirebaseListOptions.Builder<foodconst>()
-                                    .setLayout(R.layout.fooddetails)
-                                    .setQuery(query, foodconst.class)
-                                    .build();
-
-                            adapter = new FirebaseListAdapter(options) {
+                            FirebaseDatabase.getInstance().getReference().child("gout").child("avoided").child("vegetables").addValueEventListener(new ValueEventListener(){
                                 @Override
-                                protected void populateView(@NonNull View v, @NonNull Object model, int position) {
-                                    final TextView title = v.findViewById(R.id.title);
-                                    final TextView desc = v.findViewById(R.id.desc);
-                                    final ImageView image = v.findViewById(R.id.imageView);
-
-                                    query.child("gout").child("suggested").child("fat").child("fruits").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.getValue() != null) {
-
-                                                foodconst fc = dataSnapshot.getValue(foodconst.class);
-                                                title.setText("Title:" + fc.getTitle());
-                                                desc.setText("Decsription:" + fc.getDesc());
-                                                Picasso.get().load(fc.getImage()).into(image);
-
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                                        {
+                                            if (dataSnapshot1.exists())
+                                            {
+                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
+                                                snapshotListData.add(fc);
+                                                adapterFood.notifyDataSetChanged();
                                             }
-
                                         }
-
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                        }
-                                    });
-                                    lv.setAdapter(adapter);
+                                    }
                                 }
-                            };
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) { }
+                            });
+                        }
+                        else if (selectedItems[2] == true )
+                        {
+                            FirebaseDatabase.getInstance().getReference().child("gout").child("avoided").child("protein").addValueEventListener(new ValueEventListener(){
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                                        {
+                                            if (dataSnapshot1.exists())
+                                            {
+                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
+                                                snapshotListData.add(fc);
+                                                adapterFood.notifyDataSetChanged();
+                                            }
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) { }
+                            });
+                        }
+                        else if (selectedItems[3] == true )
+                        {
+                            FirebaseDatabase.getInstance().getReference().child("gout").child("avoided").child("legume").addValueEventListener(new ValueEventListener(){
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                                        {
+                                            if (dataSnapshot1.exists())
+                                            {
+                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
+                                                snapshotListData.add(fc);
+                                                adapterFood.notifyDataSetChanged();
+                                            }
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) { }
+                            });
+                        }
+                        else if (selectedItems[4] == true )
+                        {
+                            FirebaseDatabase.getInstance().getReference().child("gout").child("avoided").child("others").addValueEventListener(new ValueEventListener(){
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                                        {
+                                            if (dataSnapshot1.exists())
+                                            {
+                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
+                                                snapshotListData.add(fc);
+                                                adapterFood.notifyDataSetChanged();
+                                            }
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) { }
+                            });
                         }
 
                     }
                 });
+
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.setCanceledOnTouchOutside(true);
                 alertDialog.show();
-
             }
-        });
-        final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
-
-
-        FirebaseDatabase.getInstance().getReference().child("gout").child("avoided").addValueEventListener(new ValueEventListener(){
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot){
-                if(dataSnapshot.exists()){
-                    for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
-
-                        if(dataSnapshot1.exists()){
-                            for(DataSnapshot dataSnapshot2 : dataSnapshot1.getChildren()){
-                                if (dataSnapshot2.exists()) {
-                                    foodconst fc = dataSnapshot2.getValue(foodconst.class);
-                                    snapshotListData.add(fc);
-                                    adapterFood.notifyDataSetChanged();
-
-                                }
-                            }
-                        }
-                    }
-
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-
-
         });
 
         lv = (ListView) findViewById(R.id.listView);
-
-
         adapterFood = new FoodAdapter(this,0,snapshotListData);
         lv.setAdapter(adapterFood);
-
-
     }
 
     @Override
-    protected void onStart() {
+    protected void onStart()
+    {
         super.onStart();
-
-
     }
 
     @Override
-    protected void onStop() {
+    protected void onStop()
+    {
         super.onStop();
-
-
     }
 }
 

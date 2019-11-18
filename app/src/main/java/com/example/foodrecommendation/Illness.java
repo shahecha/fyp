@@ -103,10 +103,10 @@ public class Illness extends AppCompatActivity {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             if(i==0)
-                            { Intent j = new Intent(Illness.this,suggestedgout.class);
+                            { Intent j = new Intent(Illness.this,suggestedhc.class);
                                 startActivity(j);}
                             if(i==1)
-                            { Intent j = new Intent(Illness.this,avoidedgout.class);
+                            { Intent j = new Intent(Illness.this,avoidedhc.class);
                                 startActivity(j);}
 
                         }

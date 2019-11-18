@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".avoidedgout"
+    tools:context=".avoidedhc"
     android:background="@drawable/new_login_gradients">
 
 
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
-            android:text="AVOIDED FOOD FOR GOUT"
+            android:text="AVOIDED FOOD FOR HYPERLIPIDEMIA"
             android:textColor="#FFFF"
             android:textStyle="bold"
             android:textSize="22sp" />

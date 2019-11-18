@@ -69,7 +69,7 @@ public class FoodAdapter extends ArrayAdapter<foodconst> {
             holder.desc.setText(foods.get(position).getDesc());
             Picasso.get().load(foods.get(position).getImage()).into(holder.image);
         }
-            catch (Exception e){
+        catch (Exception e){
 
         }
         return  vi;

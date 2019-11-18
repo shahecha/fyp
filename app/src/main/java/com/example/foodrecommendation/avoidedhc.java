@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class avoidedhypertension extends AppCompatActivity {
+public class avoidedhc extends AppCompatActivity {
 
 
     Button button;
@@ -41,19 +41,19 @@ public class avoidedhypertension extends AppCompatActivity {
     FoodAdapter adapterFood;
     private DatabaseReference query;
 
-    CharSequence[] items = { "Grains", "Fruit","Vegetable", "Protein", "Fat","Dairy","Others"};
-    boolean[] selectedItems = { false, false, false, false, false,false,false};
+    CharSequence[] items = { "Grains", "Fruit","Vegetable", "Protein", "Fat","Sugar","Dairy","Others"};
+    boolean[] selectedItems = { false, false, false, false, false,false,false,false};
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_avoidedhypertension);
+        setContentView(R.layout.activity_avoidedhc);
 
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
 
-        FirebaseDatabase.getInstance().getReference().child("hipertension").child("avoided").addValueEventListener(new ValueEventListener(){
+        FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot){
                 if(dataSnapshot.exists())
@@ -86,7 +86,7 @@ public class avoidedhypertension extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(avoidedhypertension.this);
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(avoidedhc.this);
                 alertDialogBuilder.setCancelable(true);
                 alertDialogBuilder.setTitle("Select Food Category");
                 alertDialogBuilder.setMultiChoiceItems(items, selectedItems, new DialogInterface.OnMultiChoiceClickListener() {
@@ -100,7 +100,7 @@ public class avoidedhypertension extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int which) {
                         if (selectedItems[0] == true )
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hipertension").child("avoided").child("grains").addValueEventListener(new ValueEventListener(){
+                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("grains").addValueEventListener(new ValueEventListener(){
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if (dataSnapshot.exists()) {
@@ -122,7 +122,7 @@ public class avoidedhypertension extends AppCompatActivity {
                         }
                         else if (selectedItems[1] == true )
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hipertension").child("avoided").child("vegetables").addValueEventListener(new ValueEventListener(){
+                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("fruit").addValueEventListener(new ValueEventListener(){
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if (dataSnapshot.exists()) {
@@ -144,7 +144,7 @@ public class avoidedhypertension extends AppCompatActivity {
                         }
                         else if (selectedItems[2] == true )
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hipertension").child("avoided").child("protein").addValueEventListener(new ValueEventListener(){
+                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("vegetables").addValueEventListener(new ValueEventListener(){
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if (dataSnapshot.exists()) {
@@ -166,7 +166,7 @@ public class avoidedhypertension extends AppCompatActivity {
                         }
                         else if (selectedItems[3] == true )
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hipertension").child("avoided").child("fat").addValueEventListener(new ValueEventListener(){
+                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("protein").addValueEventListener(new ValueEventListener(){
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if (dataSnapshot.exists()) {
@@ -188,7 +188,7 @@ public class avoidedhypertension extends AppCompatActivity {
                         }
                         else if (selectedItems[4] == true )
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hipertension").child("avoided").child("dairy").addValueEventListener(new ValueEventListener(){
+                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("fat").addValueEventListener(new ValueEventListener(){
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if (dataSnapshot.exists()) {
@@ -210,7 +210,7 @@ public class avoidedhypertension extends AppCompatActivity {
                         }
                         else if (selectedItems[5] == true )
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hipertension").child("avoided").child("others").addValueEventListener(new ValueEventListener(){
+                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("sugar").addValueEventListener(new ValueEventListener(){
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                     if (dataSnapshot.exists()) {
@@ -230,6 +230,51 @@ public class avoidedhypertension extends AppCompatActivity {
                                 public void onCancelled(@NonNull DatabaseError databaseError) { }
                             });
                         }
+                        else if (selectedItems[6] == true )
+                        {
+                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("dairy").addValueEventListener(new ValueEventListener(){
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                                        {
+                                            if (dataSnapshot1.exists())
+                                            {
+                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
+                                                snapshotListData.add(fc);
+                                                adapterFood.notifyDataSetChanged();
+                                            }
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) { }
+                            });
+                        }
+                        else if (selectedItems[7] == true )
+                        {
+                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("others").addValueEventListener(new ValueEventListener(){
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()) {
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
+                                        {
+                                            if (dataSnapshot1.exists())
+                                            {
+                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
+                                                snapshotListData.add(fc);
+                                                adapterFood.notifyDataSetChanged();
+                                            }
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError databaseError) { }
+                            });
+                        }
+
 
                     }
                 });

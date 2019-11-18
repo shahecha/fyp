@@ -16,11 +16,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Popsugestedhypertension"
-            android:theme="@style/AppTheme.PopMe">></activity>
+        <activity android:name=".avoidedhc" />
+        <activity
+            android:name=".Popsuggestedhc"
+            android:theme="@style/AppTheme.PopMe" />
+        <activity android:name=".suggestedhc" />
+        <activity
+            android:name=".Popsugestedgout"
+            android:theme="@style/AppTheme.PopMe" />
+        <activity
+            android:name=".Popsugestedhypertension"
+            android:theme="@style/AppTheme.PopMe" />
         <activity
             android:name=".Popsugesteddiabetes"
-            android:theme="@style/AppTheme.PopMe"></activity>
+            android:theme="@style/AppTheme.PopMe" />
         <activity android:name=".avoidedhypertension" />
         <activity android:name=".suggestedhypertension" />
         <activity android:name=".avoideddiabetes" />
@@ -32,7 +41,6 @@
         <activity android:name=".introdiabetes" />
         <activity android:name=".Introhc" />
         <activity android:name=".Introbp" />
-        <activity android:name=".Food" />
         <activity android:name=".Introduction" />
         <activity android:name=".Tipsbp" />
         <activity android:name=".Tipsgout" />
