@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".avoidedhcprotein"
+    android:background="@drawable/new_login_gradients">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:src="@drawable/logo3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.482" />
+
+
+        <TextView
+            android:id="@+id/fruitcategoryname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+            android:textColor="#FFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="AVOIDED PROTEIN FOR HYPERLIPIDEMIA"
+            tools:ignore="InvalidId" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="420dp"
+            android:fillViewport="true">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:alignmentMode="alignMargins"
+                android:columnCount="1"
+                android:columnOrderPreserved="false"
+                android:rowCount="200">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="90"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="6dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                        <ListView
+                            android:id="@+id/listView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_close"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_width="100dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background_login"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="Close"
+            android:textAllCaps="false"
+            android:textColor="#f16f7d"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
+</LinearLayout>

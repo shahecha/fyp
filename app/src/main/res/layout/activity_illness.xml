@@ -53,7 +53,7 @@
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false"
                 android:columnCount="1"
-                android:rowCount="6">
+                android:rowCount="4">
 
 
             <androidx.cardview.widget.CardView

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".FruitDiabetesSuggested"
+    tools:context=".suggestedhcgrains"
     android:background="@drawable/new_login_gradients">
 
 
@@ -37,13 +37,14 @@
             android:layout_gravity="center"
             android:layout_marginTop="1dp"
             android:textColor="#FFFF"
-            android:textSize="22sp"
+            android:textSize="18sp"
             android:textStyle="bold"
+            android:text="SUGGESTED GRAINS FOR HYPERLIPIDEMIA"
             tools:ignore="InvalidId" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="420dp"
             android:fillViewport="true">
 
             <GridLayout
@@ -88,16 +89,15 @@
             android:id="@+id/btn_close"
             style="@style/Base.TextAppearance.AppCompat.Body1"
             android:layout_width="100dp"
-            android:layout_height="40dp"
+            android:layout_height="34dp"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/background_login"
             android:clickable="true"
-            android:padding="8dp"
+            android:padding="5dp"
             android:text="Close"
             android:textAllCaps="false"
             android:textColor="#f16f7d"
-            android:textSize="20sp"
+            android:textSize="18sp"
             tools:ignore="MissingConstraints" />
-
     </LinearLayout>
 </LinearLayout>

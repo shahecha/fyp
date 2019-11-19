@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FruitDiabetesSuggested extends AppCompatActivity {
+public class avoidedhcprotein extends AppCompatActivity {
 
     ListView lv;
     FirebaseListAdapter adapter;
@@ -43,11 +43,10 @@ public class FruitDiabetesSuggested extends AppCompatActivity {
     Button btn_close;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fruit_diabetes_suggested);
+        setContentView(R.layout.activity_avoidedhcprotein);
 
 
         btn_close=(Button)findViewById(R.id.btn_close);
@@ -64,7 +63,8 @@ public class FruitDiabetesSuggested extends AppCompatActivity {
         int width=dm.widthPixels;
         int height=dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.9),(int)(height*.9));
+        // getWindow().setLayout((int)(width*.9),(int)(height*.9));
+        getWindow().setLayout(width, height);
 
         WindowManager.LayoutParams params=getWindow().getAttributes();
         params.gravity= Gravity.CENTER;
@@ -75,7 +75,7 @@ public class FruitDiabetesSuggested extends AppCompatActivity {
 
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
-        FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").child("fruit").addValueEventListener(new ValueEventListener(){
+        FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("protein").addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {

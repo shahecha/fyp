@@ -34,7 +34,6 @@ import java.util.List;
 
 public class suggestedgout extends AppCompatActivity {
 
-
     Button btn_sub;
     Button button;
     ListView lv;
@@ -42,9 +41,8 @@ public class suggestedgout extends AppCompatActivity {
     FoodAdapter adapterFood;
     private DatabaseReference query;
 
-    CharSequence[] items = { "Grains", "Fruit", "Vegetable", "Protein", "Fat","Dairy"};
-    boolean[] selectedItems = { false, false, false, false, false,false};
 
+    String[] listItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +53,10 @@ public class suggestedgout extends AppCompatActivity {
         btn_sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(suggestedgout.this,Popsugestedgout.class);
+                Intent i=new Intent(suggestedgout.this,Popsugesteddiabetes.class);
                 startActivity(i);
             }
         });
-
 
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
@@ -92,161 +89,67 @@ public class suggestedgout extends AppCompatActivity {
             }
         });
 
-
         button = findViewById(R.id.buttonfilter);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(suggestedgout.this);
-                alertDialogBuilder.setCancelable(true);
-                alertDialogBuilder.setTitle("Select Food Category");
-                alertDialogBuilder.setMultiChoiceItems(items, selectedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                listItems = new String[]{"Grains", "Fruit", "Vegetable", "Protein", "Fat","Dairy"};
+                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(suggestedgout.this);
+                mBuilder.setTitle("Food Recommendation Gout");
+                mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int which, boolean isChecked) {
-                        selectedItems[which] = isChecked;
-                    }
-                });
-                alertDialogBuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which) {
-                        if (selectedItems[0] == true )
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        if (i == 0)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("grains").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(suggestedgout.this,suggestedgoutgrains.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[1] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("fruit").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                        if (i == 1)
+                        {
+
+                            Intent j = new Intent(suggestedgout.this,suggestedgoutfruit.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[2] == true )
+                        if (i == 2)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("vegetables").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(suggestedgout.this,suggestedgoutvegetables.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[3] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("protein").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                        if (i == 3)
+                        {
+
+                            Intent j = new Intent(suggestedgout.this,suggestedgoutprotein.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[4] == true )
+                        if (i == 4)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("fat").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(suggestedgout.this,suggestedgoutfat.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[5] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("dairy").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                        if (i == 5)
+                        {
+
+                            Intent j = new Intent(suggestedgout.this,suggestedgoutdairy.class);
+                            startActivity(j);
                         }
                     }
                 });
+                mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.setCanceledOnTouchOutside(true);
-                alertDialog.show();
+                    }
+                });
+                //show alert dialog
+                AlertDialog mDialog = mBuilder.create();
+                mDialog.show();
+
             }
         });
 

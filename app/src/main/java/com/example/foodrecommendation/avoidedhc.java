@@ -34,24 +34,22 @@ import java.util.List;
 
 public class avoidedhc extends AppCompatActivity {
 
-
     Button button;
     ListView lv;
     FirebaseListAdapter adapter;
     FoodAdapter adapterFood;
     private DatabaseReference query;
 
-    CharSequence[] items = { "Grains", "Fruit","Vegetable", "Protein", "Fat","Sugar","Dairy","Others"};
-    boolean[] selectedItems = { false, false, false, false, false,false,false,false};
 
+    String[] listItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avoidedhc);
 
-        final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
+        final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
         FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").addValueEventListener(new ValueEventListener(){
             @Override
@@ -86,202 +84,75 @@ public class avoidedhc extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(avoidedhc.this);
-                alertDialogBuilder.setCancelable(true);
-                alertDialogBuilder.setTitle("Select Food Category");
-                alertDialogBuilder.setMultiChoiceItems(items, selectedItems, new DialogInterface.OnMultiChoiceClickListener() {
+                listItems = new String[]{"Grains", "Fruit","Vegetable", "Protein", "Fat","Sugar","Dairy","Others"};
+                final AlertDialog.Builder mBuilder = new AlertDialog.Builder(avoidedhc.this);
+                mBuilder.setTitle("Food Recommendation Hyperlipidemia");
+                mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int which, boolean isChecked) {
-                        selectedItems[which] = isChecked;
-                    }
-                });
-                alertDialogBuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which) {
-                        if (selectedItems[0] == true )
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        if (i == 0)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("grains").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(avoidedhc.this,avoidedhcgrains.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[1] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("fruit").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                        if (i == 1)
+                        {
+
+                            Intent j = new Intent(avoidedhc.this,avoidedhcfruit.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[2] == true )
+                        if (i == 2)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("vegetables").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(avoidedhc.this,avoidedhcvegetables.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[3] == true )
+                        if (i == 3)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("protein").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(avoidedhc.this,avoidedhcprotein.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[4] == true )
+                        if (i == 4)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("fat").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(avoidedhc.this,avoidedhcfat.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[5] == true )
+                        if (i ==5)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("sugar").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(avoidedhc.this,avoidedhcsugar.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[6] == true )
+                        if (i ==6)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("dairy").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(avoidedhc.this,avoidedhcdairy.class);
+                            startActivity(j);
                         }
-                        else if (selectedItems[7] == true )
+                        if (i ==7)
                         {
-                            FirebaseDatabase.getInstance().getReference().child("hyperlipidemia").child("avoided").child("others").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
+                            Intent j = new Intent(avoidedhc.this,avoidedhcothers.class);
+                            startActivity(j);
                         }
 
 
                     }
                 });
+                mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.setCanceledOnTouchOutside(true);
-                alertDialog.show();
+                    }
+                });
+                //show alert dialog
+                AlertDialog mDialog = mBuilder.create();
+                mDialog.show();
+
             }
         });
 

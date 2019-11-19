@@ -41,8 +41,6 @@ public class suggesteddiabetes extends AppCompatActivity {
     FoodAdapter adapterFood;
     private DatabaseReference query;
 
-    CharSequence[] items = { "Grains", "Fruit", "Vegetable", "Protein", "Legume","Dairy"};
-    boolean[] selectedItems = { false, false, false, false, false,false};
 
     String[] listItems;
 
@@ -104,40 +102,40 @@ public class suggesteddiabetes extends AppCompatActivity {
                   {
                       if (i == 0)
                       {
-                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          Intent j = new Intent(suggesteddiabetes.this,suggesteddiabetesgrains.class);
                           startActivity(j);
                       }
 
                       if (i == 1)
                       {
 
-                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          Intent j = new Intent(suggesteddiabetes.this,suggesteddiabetesfruit.class);
                           startActivity(j);
                       }
                       if (i == 2)
                       {
 
-                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          Intent j = new Intent(suggesteddiabetes.this,suggesteddiabetesvegetable.class);
                           startActivity(j);
                       }
 
                       if (i == 3)
                       {
 
-                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          Intent j = new Intent(suggesteddiabetes.this,suggesteddiabetesprotein.class);
                           startActivity(j);
                       }
                       if (i == 4)
                       {
 
-                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          Intent j = new Intent(suggesteddiabetes.this,suggesteddiabeteslegume.class);
                           startActivity(j);
                       }
 
                       if (i == 5)
                       {
 
-                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          Intent j = new Intent(suggesteddiabetes.this,suggesteddiabetesdairy.class);
                           startActivity(j);
                       }
                   }
