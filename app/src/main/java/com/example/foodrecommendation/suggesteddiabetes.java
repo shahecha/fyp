@@ -34,7 +34,7 @@ import java.util.List;
 
 public class suggesteddiabetes extends AppCompatActivity {
 
-
+    Button btn_sub;
     Button button;
     ListView lv;
     FirebaseListAdapter adapter;
@@ -44,14 +44,23 @@ public class suggesteddiabetes extends AppCompatActivity {
     CharSequence[] items = { "Grains", "Fruit", "Vegetable", "Protein", "Legume","Dairy"};
     boolean[] selectedItems = { false, false, false, false, false,false};
 
+    String[] listItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggesteddiabetes);
 
-        final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
+        btn_sub=(Button)findViewById(R.id.buttonguidefood);
+        btn_sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(suggesteddiabetes.this,Popsugesteddiabetes.class);
+                startActivity(i);
+            }
+        });
 
+        final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
         FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").addValueEventListener(new ValueEventListener(){
             @Override
@@ -82,162 +91,68 @@ public class suggesteddiabetes extends AppCompatActivity {
             }
         });
 
-
         button = findViewById(R.id.buttonfilter);
         button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(suggesteddiabetes.this);
-                alertDialogBuilder.setCancelable(true);
-                alertDialogBuilder.setTitle("Select Food Category");
-                alertDialogBuilder.setMultiChoiceItems(items, selectedItems, new DialogInterface.OnMultiChoiceClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which, boolean isChecked) {
-                        selectedItems[which] = isChecked;
-                    }
-                });
-                alertDialogBuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int which) {
-                        if (selectedItems[0] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").child("grains").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
+          @Override
+          public void onClick(View view) {
+              listItems = new String[]{"Grains", "Fruit", "Vegetable", "Protein", "Legume", "Dairy"};
+              final AlertDialog.Builder mBuilder = new AlertDialog.Builder(suggesteddiabetes.this);
+              mBuilder.setTitle("Food Recommendation Diabetes");
+              mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+                  @Override
+                  public void onClick(DialogInterface dialogInterface, int i)
+                  {
+                      if (i == 0)
+                      {
+                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          startActivity(j);
+                      }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
-                        }
-                        else if (selectedItems[1] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").child("fruit").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
+                      if (i == 1)
+                      {
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
-                        }
-                        else if (selectedItems[2] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").child("vegetables").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
+                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          startActivity(j);
+                      }
+                      if (i == 2)
+                      {
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
-                        }
-                        else if (selectedItems[3] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").child("protein").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
+                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          startActivity(j);
+                      }
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
-                        }
-                        else if (selectedItems[4] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").child("legume").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
+                      if (i == 3)
+                      {
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
-                        }
-                        else if (selectedItems[5] == true )
-                        {
-                            FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").child("dairy").addValueEventListener(new ValueEventListener(){
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                    if (dataSnapshot.exists()) {
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                                        {
-                                            if (dataSnapshot1.exists())
-                                            {
-                                                foodconst fc = dataSnapshot1.getValue(foodconst.class);
-                                                snapshotListData.add(fc);
-                                                adapterFood.notifyDataSetChanged();
-                                            }
-                                        }
-                                    }
-                                }
+                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          startActivity(j);
+                      }
+                      if (i == 4)
+                      {
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError databaseError) { }
-                            });
-                        }
-                    }
-                });
+                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          startActivity(j);
+                      }
 
-                AlertDialog alertDialog = alertDialogBuilder.create();
-                alertDialog.setCanceledOnTouchOutside(true);
-                alertDialog.show();
-            }
+                      if (i == 5)
+                      {
+
+                          Intent j = new Intent(suggesteddiabetes.this,FruitDiabetesSuggested.class);
+                          startActivity(j);
+                      }
+                  }
+              });
+              mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                  @Override
+                  public void onClick(DialogInterface dialogInterface, int i) {
+
+                  }
+              });
+              //show alert dialog
+              AlertDialog mDialog = mBuilder.create();
+              mDialog.show();
+
+          }
         });
 
         lv = (ListView) findViewById(R.id.listView);

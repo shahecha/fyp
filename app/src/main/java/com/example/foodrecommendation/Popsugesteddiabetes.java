@@ -33,7 +33,7 @@ public class Popsugesteddiabetes extends Activity {
         int width=dm.widthPixels;
         int height=dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.8),(int)(height*.5));
+        getWindow().setLayout(width, height);
 
         WindowManager.LayoutParams params=getWindow().getAttributes();
         params.gravity= Gravity.CENTER;

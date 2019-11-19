@@ -35,6 +35,7 @@ import java.util.List;
 public class suggestedgout extends AppCompatActivity {
 
 
+    Button btn_sub;
     Button button;
     ListView lv;
     FirebaseListAdapter adapter;
@@ -50,8 +51,17 @@ public class suggestedgout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggestedgout);
 
-        final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
+        btn_sub=(Button)findViewById(R.id.buttonguidefood);
+        btn_sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(suggestedgout.this,Popsugestedgout.class);
+                startActivity(i);
+            }
+        });
 
+
+        final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
         FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").addValueEventListener(new ValueEventListener(){
             @Override

@@ -7,33 +7,35 @@
     tools:context=".Popsugesteddiabetes"
     android:background="@drawable/new_login_gradients">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
-        android:id="@+id/d1"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="223dp"
-        app:src="@drawable/d1"
-        tools:ignore="InvalidId" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_close"
-        style="@style/Base.TextAppearance.AppCompat.Body1"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:background="@drawable/background_login"
-        android:clickable="true"
-        android:padding="8dp"
-        android:text="Close"
-        android:textAllCaps="false"
-        android:textColor="#f16f7d"
-        android:textSize="20sp"
-        android:layout_gravity="center_horizontal"
-        tools:ignore="MissingConstraints" />
+        <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+            android:id="@+id/d1"
+            android:layout_width="match_parent"
+            android:layout_height="223dp"
+            android:layout_gravity="center_vertical"
+            app:src="@drawable/d1"
+            tools:ignore="InvalidId" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btn_close"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background_login"
+            android:clickable="true"
+            android:padding="8dp"
+            android:text="Close"
+            android:textAllCaps="false"
+            android:textColor="#f16f7d"
+            android:textSize="20sp"
+            tools:ignore="MissingConstraints" />
+
+    </LinearLayout>
 
 </LinearLayout>

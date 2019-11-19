@@ -19,7 +19,6 @@ import android.widget.ListView;
 
 import android.widget.TextView;
 
-
 public class Illness extends AppCompatActivity {
 
     ListView listView;
@@ -45,17 +44,22 @@ public class Illness extends AppCompatActivity {
             public void onItemClick(AdapterView< ? > parent, View view, int position, long id) {
                 if (position == 0) {
                     listItems=new String[]{"Suggested food","Avoided food"};
-                    AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
+                    final AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
                     mBuilder.setTitle("Food Recommendation Diabetes");
                     mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
-                        @Override
+                       @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             if(i==0)
-                            { Intent j = new Intent(Illness.this,suggesteddiabetes.class);
-                                startActivity(j);}
-                            if(i==1)
-                            { Intent j = new Intent(Illness.this,avoideddiabetes.class);
-                                startActivity(j);}
+                            {
+                                Intent j = new Intent(Illness.this,suggesteddiabetes.class);
+                                startActivity(j);
+                            }
+
+                          if(i==1)
+                            {
+                                Intent j = new Intent(Illness.this,avoideddiabetes.class);
+                                startActivity(j);
+                            }
                         }
                     });
                     mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
@@ -176,7 +180,6 @@ public class Illness extends AppCompatActivity {
             // now set our resources on views
             images.setImageResource(rImgs[position]);
             myTitle.setText(rTitle[position]);
-
 
             return row;
         }
