@@ -53,19 +53,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!--  <com.zolad.zoominimageview.ZoomInImageView
-                              android:layout_width="match_parent"
-                              android:layout_height="223dp"
-                              android:src="@drawable/bptips"/> -->
+             <com.zolad.zoominimageview.ZoomInImageView
+                android:layout_width="match_parent"
+                android:layout_height="223dp"
+                android:src="@drawable/hcinfo"/>
 
-                <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="223dp"
-                    app:src="@drawable/hcinfo"/>
+                <!--   <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="223dp"
+                      app:src="@drawable/hcinfo"/> zoom inside layout scale only -->
 
 
 
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-</LinearLayout>
+              </LinearLayout>
+          </ScrollView>
+      </LinearLayout>
+  </LinearLayout>

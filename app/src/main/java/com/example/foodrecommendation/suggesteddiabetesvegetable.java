@@ -75,7 +75,7 @@ public class suggesteddiabetesvegetable extends AppCompatActivity {
 
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
-        FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").child("grains").addValueEventListener(new ValueEventListener(){
+        FirebaseDatabase.getInstance().getReference().child("diabetes").child("suggested").child("vegetables").addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {

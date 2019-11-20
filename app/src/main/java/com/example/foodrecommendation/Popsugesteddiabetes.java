@@ -1,7 +1,6 @@
 package com.example.foodrecommendation;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -33,7 +32,8 @@ public class Popsugesteddiabetes extends Activity {
         int width=dm.widthPixels;
         int height=dm.heightPixels;
 
-        getWindow().setLayout(width, height);
+       // getWindow().setLayout((int)(width*.8),(int)(height*.5)); customize popup window size
+        getWindow().setLayout(width, height); //full layout size
 
         WindowManager.LayoutParams params=getWindow().getAttributes();
         params.gravity= Gravity.CENTER;

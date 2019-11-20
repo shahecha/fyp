@@ -53,95 +53,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:background="#8a3324"
-                    android:text="To reduce gout, patients needs to:         "
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="1. Control your weight and if you are overweight, gradually lose weight to ideal weight."
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                 <com.zolad.zoominimageview.ZoomInImageView
+                       android:layout_width="match_parent"
+                       android:layout_height="223dp"
+                       android:src="@drawable/picture7"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="2. Drink plenty of plain water of 2-3 liters (8-12 cups) a day to promote the excretion of uric acid and to prevent formation of uric acid."
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="3. Reduce fat intake. High fat in the body will prevent excess uric acid removal through the urine. "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="4. Low purine diet is recommended to control the high uric acid.                            "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="223dp"
-                    android:layout_marginTop="12dp"
-                    app:srcCompat="@drawable/purine"
-                    tools:ignore="DuplicateIds" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="5. Limit or avoid alcoholic beverages.                                   "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
+                <!--   <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+                       android:layout_width="match_parent"
+                       android:layout_height="223dp"
+                       app:src="@drawable/picture7"/> zoom inside layout scale only-->
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:background="#8a3324"
-                    android:text="6. Regularly check once every 3 months to monitor your uric acid levels.                               "
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold"/>
-
-
-
-
-
-
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-</LinearLayout>
+               </LinearLayout>
+           </ScrollView>
+       </LinearLayout>
+   </LinearLayout>

@@ -63,12 +63,19 @@
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
+               <com.zolad.zoominimageview.ZoomInImageView
+                     android:id="@+id/bptips"
+                     android:layout_width="match_parent"
+                     android:layout_height="260dp"
+                     android:src="@drawable/bptips" />
 
-                <com.zolad.zoominimageview.ZoomInImageView
+                <!--  <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
                     android:id="@+id/bptips"
                     android:layout_width="match_parent"
-                    android:layout_height="260dp"
-                    android:src="@drawable/bptips" />
+                    android:layout_height="223dp"
+                    app:src="@drawable/bptips"
+                    tools:ignore="InvalidId" /> zoom inside layout scale only -->
+
 
                 <Button
                     android:id="@+id/saveBtn"
@@ -92,14 +99,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.493"
                     app:layout_constraintStart_toStartOf="parent" />
-
-             <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
-                    android:id="@+id/bptips2"
-                    android:layout_width="match_parent"
-                    android:layout_height="223dp"
-                    app:src="@drawable/bptips"
-                    tools:ignore="InvalidId" />
-
 
 
             </LinearLayout>

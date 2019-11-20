@@ -13,13 +13,18 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+        <!--   <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
             android:id="@+id/d1"
             android:layout_width="match_parent"
             android:layout_height="223dp"
             android:layout_gravity="center_vertical"
             app:src="@drawable/d1"
-            tools:ignore="InvalidId" />
+            tools:ignore="InvalidId" /> -->
+
+        <com.zolad.zoominimageview.ZoomInImageView
+            android:layout_width="match_parent"
+            android:layout_height="223dp"
+            android:src="@drawable/d1"/>
 
         <Button
             android:id="@+id/btn_close"

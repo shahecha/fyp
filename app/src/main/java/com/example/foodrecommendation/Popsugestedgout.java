@@ -33,7 +33,8 @@ public class Popsugestedgout extends Activity {
         int width=dm.widthPixels;
         int height=dm.heightPixels;
 
-        getWindow().setLayout((int)(width*.8),(int)(height*.5));
+        // getWindow().setLayout((int)(width*.8),(int)(height*.5)); customize popup window size
+        getWindow().setLayout(width, height); //full layout size
 
         WindowManager.LayoutParams params=getWindow().getAttributes();
         params.gravity= Gravity.CENTER;

@@ -9,15 +9,22 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
-        <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
-            android:id="@+id/h1"
+            <!--   <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+          android:id="@+id/d1"
+          android:layout_width="match_parent"
+          android:layout_height="223dp"
+          android:layout_gravity="center_vertical"
+          app:src="@drawable/p1"
+          tools:ignore="InvalidId" /> -->
+
+        <com.zolad.zoominimageview.ZoomInImageView
             android:layout_width="match_parent"
             android:layout_height="223dp"
-            app:src="@drawable/h1"
-            tools:ignore="InvalidId" />
+            android:src="@drawable/h1"/>
 
         <Button
             android:id="@+id/btn_close"

@@ -63,19 +63,19 @@
                     android:textColor="#FFFFFF"
                     android:textSize="20sp" />
 
-                <!--  <com.zolad.zoominimageview.ZoomInImageView
+                 <com.zolad.zoominimageview.ZoomInImageView
                          android:layout_width="match_parent"
                          android:layout_height="223dp"
-                         android:src="@drawable/bptips"/> -->
+                         android:src="@drawable/hctips"/>
 
-                <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="223dp"
-                    app:src="@drawable/hctips"/>
+                <!--   <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+                      android:layout_width="match_parent"
+                      android:layout_height="223dp"
+                      app:src="@drawable/hctips"/> zoom inside layout scale only-->
 
 
 
-            </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
-</LinearLayout>
+              </LinearLayout>
+          </ScrollView>
+      </LinearLayout>
+  </LinearLayout>

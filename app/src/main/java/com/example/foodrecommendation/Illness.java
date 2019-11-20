@@ -15,173 +15,156 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import android.widget.TextView;
-
 public class Illness extends AppCompatActivity {
 
-    ListView listView;
-    String mTitle[] = {"DIABETES","HYPERTENSION","HYPERLIPIDEMIA","GOUT"};
-    int images[] = { R.drawable.diabetes, R.drawable.hbp, R.drawable.highcholestrol,R.drawable.gout};
-
-   //radio button list
     String[] listItems;
+    private LinearLayout e;
+    private LinearLayout f;
+    private LinearLayout s;
+    private LinearLayout h;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_illness);
 
-        listView = findViewById(R.id.listView);
-
-
-        MyAdapter adapter = new MyAdapter(this, mTitle, images);
-        listView.setAdapter(adapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        e = (LinearLayout) findViewById(R.id.diabetes);
+        e.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView< ? > parent, View view, int position, long id) {
-                if (position == 0) {
-                    listItems=new String[]{"Suggested food","Avoided food"};
-                    final AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                    mBuilder.setTitle("Food Recommendation Diabetes");
-                    mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
-                       @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            if(i==0)
-                            {
-                                Intent j = new Intent(Illness.this,suggesteddiabetes.class);
-                                startActivity(j);
-                            }
-
-                          if(i==1)
-                            {
-                                Intent j = new Intent(Illness.this,avoideddiabetes.class);
-                                startActivity(j);
-                            }
+            public void onClick(View v) {
+                listItems=new String[]{"Suggested food","Avoided food"};
+                final AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
+                mBuilder.setTitle("Food Recommendation Diabetes");
+                mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if(i==0)
+                        {
+                            Intent j = new Intent(Illness.this,suggesteddiabetes.class);
+                            startActivity(j);
                         }
-                    });
-                    mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
 
+                        if(i==1)
+                        {
+                            Intent j = new Intent(Illness.this,avoideddiabetes.class);
+                            startActivity(j);
                         }
-                    });
-                    //show alert dialog
-                    AlertDialog mDialog=mBuilder.create();
-                    mDialog.show();
-                }
-                if (position == 1) {
-                    listItems=new String[]{"Suggested food","Avoided food"};
-                    AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                    mBuilder.setTitle(" Food Recommendation Hypertension");
-                    mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            if(i==0)
-                            { Intent j = new Intent(Illness.this,suggestedhypertension.class);
-                                startActivity(j);}
-                            if(i==1)
-                            { Intent j = new Intent(Illness.this,avoidedhypertension.class);
-                                startActivity(j);}
+                    }
+                });
+                mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                        }
-                    });
-                    mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                        }
-                    });
-                    //show alert dialog
-                    AlertDialog mDialog=mBuilder.create();
-                    mDialog.show();
-
-                }
-                if (position == 2) {
-                    listItems=new String[]{"Suggested food","Avoided food"};
-                    AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                    mBuilder.setTitle("Food Recommendation Hyperlipidemia");
-                    mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            if(i==0)
-                            { Intent j = new Intent(Illness.this,suggestedhc.class);
-                                startActivity(j);}
-                            if(i==1)
-                            { Intent j = new Intent(Illness.this,avoidedhc.class);
-                                startActivity(j);}
-
-                        }
-                    });
-                    mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                        }
-                    });
-                    //show alert dialog
-                    AlertDialog mDialog=mBuilder.create();
-                    mDialog.show();
-                }
-                if (position == 3) {
-                    listItems=new String[]{"Suggested food","Avoided food"};
-                    AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                    mBuilder.setTitle(" Food Recommendation Gout");
-                    mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            if(i==0)
-                            { Intent j = new Intent(Illness.this,suggestedgout.class);
-                                startActivity(j);}
-                            if(i==1)
-                            { Intent j = new Intent(Illness.this,avoidedgout.class);
-                                startActivity(j);}
-
-                        }
-                    });
-                    mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-
-                        }
-                    });
-                    //show alert dialog
-                    AlertDialog mDialog=mBuilder.create();
-                    mDialog.show();
-                }
+                    }
+                });
+                //show alert dialog
+                AlertDialog mDialog=mBuilder.create();
+                mDialog.show();
 
             }
         });
-    }
 
-    class MyAdapter extends ArrayAdapter<String> {
+        f = (LinearLayout) findViewById(R.id.bp);
+        f.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listItems=new String[]{"Suggested food","Avoided food"};
+                AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
+                mBuilder.setTitle(" Food Recommendation Hypertension");
+                mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if(i==0)
+                        { Intent j = new Intent(Illness.this,suggestedhypertension.class);
+                            startActivity(j);}
+                        if(i==1)
+                        { Intent j = new Intent(Illness.this,avoidedhypertension.class);
+                            startActivity(j);}
 
-        Illness context;
-        String rTitle[];
-        int rImgs[];
+                    }
+                });
+                mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-        MyAdapter (Illness c, String[] title, int[] imgs) {
-            super(c,R.layout.illnessdetails,R.id.textView1,title);
-            this.context = c;
-            this.rTitle = title;
-            this.rImgs = imgs;
-        }
+                    }
+                });
+                //show alert dialog
+                AlertDialog mDialog=mBuilder.create();
+                mDialog.show();
 
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-          LayoutInflater layoutInflater= (LayoutInflater)getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = layoutInflater.inflate(R.layout.illnessdetails, parent, false);
-            ImageView images = row.findViewById(R.id.image);
-            TextView myTitle = row.findViewById(R.id.textView1);
+            }
+        });
 
-            // now set our resources on views
-            images.setImageResource(rImgs[position]);
-            myTitle.setText(rTitle[position]);
+        s = (LinearLayout) findViewById(R.id.hc);
+        s.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listItems=new String[]{"Suggested food","Avoided food"};
+                AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
+                mBuilder.setTitle("Food Recommendation Hyperlipidemia");
+                mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if(i==0)
+                        { Intent j = new Intent(Illness.this,suggestedhc.class);
+                            startActivity(j);}
+                        if(i==1)
+                        { Intent j = new Intent(Illness.this,avoidedhc.class);
+                            startActivity(j);}
 
-            return row;
-        }
+                    }
+                });
+                mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                //show alert dialog
+                AlertDialog mDialog=mBuilder.create();
+                mDialog.show();
+
+            }
+        });
+
+        h = (LinearLayout) findViewById(R.id.gout);
+        h.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listItems=new String[]{"Suggested food","Avoided food"};
+                AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
+                mBuilder.setTitle(" Food Recommendation Gout");
+                mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if(i==0)
+                        { Intent j = new Intent(Illness.this,suggestedgout.class);
+                            startActivity(j);}
+                        if(i==1)
+                        { Intent j = new Intent(Illness.this,avoidedgout.class);
+                            startActivity(j);}
+
+                    }
+                });
+                mBuilder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                //show alert dialog
+                AlertDialog mDialog=mBuilder.create();
+                mDialog.show();
+
+            }
+        });
+
+
+
     }
 }
