@@ -34,7 +34,7 @@ public class Tips extends AppCompatActivity {
         f.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Tips.this,tipsdiabetes.class);
+                Intent i = new Intent(Tips.this,Tipsbp.class);
                 startActivity(i);
 
             }

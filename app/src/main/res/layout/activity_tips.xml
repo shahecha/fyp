@@ -52,7 +52,7 @@
                     android:text="TIPS TO CONTROL ILLNESS"
                     android:textColor="#FFFF"
                     android:textStyle="bold"
-                    android:textSize="20sp" />
+                    android:textSize="18sp" />
 
 
                 <GridLayout

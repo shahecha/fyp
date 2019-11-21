@@ -46,7 +46,7 @@ public class suggestedgoutvegetables extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_suggestedgoutfat);
+        setContentView(R.layout.activity_suggestedgoutvegetables);
 
 
         btn_close=(Button)findViewById(R.id.btn_close);
@@ -75,7 +75,7 @@ public class suggestedgoutvegetables extends AppCompatActivity {
 
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
-        FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("fat").addValueEventListener(new ValueEventListener(){
+        FirebaseDatabase.getInstance().getReference().child("gout").child("suggested").child("vegetables").addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {

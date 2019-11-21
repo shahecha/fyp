@@ -28,40 +28,60 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.482" />
 
-        <Button
-            style="@style/Base.TextAppearance.AppCompat.Body1"
-            android:layout_width="267dp"
-            android:layout_height="44dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/background_login"
-            android:text="DIABETES INFO"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            android:textStyle="bold" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_height="match_parent"
             android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="INFORMATION ABOUT DIABETES"
+                    android:textColor="#FFFF"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
 
 
-             <com.zolad.zoominimageview.ZoomInImageView
-                      android:layout_width="match_parent"
-                      android:layout_height="223dp"
-                      android:src="@drawable/diabetesinfo"/>
+                <com.zolad.zoominimageview.ZoomInImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="223dp"
+                    android:src="@drawable/diabetesinfo"
+                    android:layout_marginTop="10dp"/>
 
-            <!--   <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
-                 android:layout_width="match_parent"
-                 android:layout_height="223dp"
-                 app:src="@drawable/diabetesinfo"/> zoom inside layout scale only-->
+                <!--   <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+                     android:layout_width="match_parent"
+                     android:layout_height="223dp"
+                     app:src="@drawable/diabetesinfo"/> zoom inside layout scale only-->
+                <Button
+                    android:id="@+id/saveBtn"
+                    style="@style/Base.TextAppearance.AppCompat.Body1"
+                    android:layout_width="120dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/background_login"
+                    android:clickable="true"
+                    android:padding="8dp"
+                    android:text="Save image"
+                    android:textAllCaps="false"
+                    android:textColor="#f16f7d"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.493"
+                    app:layout_constraintStart_toStartOf="parent" />
 
 
              </LinearLayout>

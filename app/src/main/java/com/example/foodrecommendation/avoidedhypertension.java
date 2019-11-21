@@ -99,52 +99,45 @@ public class avoidedhypertension extends AppCompatActivity {
                         if (i == 1)
                         {
 
-                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensiongrains.class);
+                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionfruit.class);
                             startActivity(j);
                         }
                         if (i == 2)
                         {
 
-                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionfruit.class);
+                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionvegetables.class);
                             startActivity(j);
                         }
                         if (i == 3)
                         {
 
-                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionvegetables.class);
+                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionprotein.class);
                             startActivity(j);
                         }
                         if (i == 4)
                         {
 
-                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionprotein.class);
+                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionfat.class);
                             startActivity(j);
                         }
                         if (i ==5)
                         {
 
-                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionfat.class);
+                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionsugar.class);
                             startActivity(j);
                         }
                         if (i ==6)
                         {
 
-                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionsugar.class);
+                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensiondairy.class);
                             startActivity(j);
                         }
                         if (i ==7)
                         {
 
-                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensiondairy.class);
-                            startActivity(j);
-                        }
-                        if (i ==8)
-                        {
-
                             Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionothers.class);
                             startActivity(j);
                         }
-
 
 
                     }

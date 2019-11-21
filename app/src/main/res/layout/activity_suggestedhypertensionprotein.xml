@@ -30,18 +30,23 @@
             app:layout_constraintVertical_bias="0.482" />
 
 
+
         <TextView
-            android:id="@+id/fruitcategoryname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="1dp"
+            android:text="ILLNESS: HYPERTENSION"
             android:textColor="#FFFF"
-            android:textSize="18sp"
             android:textStyle="bold"
-            android:text="SUGGESTED PROTEIN FOR HYPERTENSION"
-            tools:ignore="InvalidId" />
-
+            android:textSize="18sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="SUGGESTED PROTEIN"
+            android:textColor="#FFFF"
+            android:textStyle="bold"
+            android:textSize="18sp" />
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="420dp"

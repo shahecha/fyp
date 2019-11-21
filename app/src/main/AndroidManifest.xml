@@ -16,7 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".testgridlayout"></activity>
+        <activity android:name=".testgridlayout" />
         <activity android:name=".suggestedhcvegetables" />
         <activity android:name=".suggestedhypertensionothers" />
         <activity android:name=".suggestedhypertensionlegume" />
