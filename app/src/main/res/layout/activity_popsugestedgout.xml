@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Popsugesteddiabetes"
-    android:background="@drawable/new_login_gradients">
+    android:background="@drawable/bg4">
 
     <LinearLayout
         android:layout_width="match_parent"

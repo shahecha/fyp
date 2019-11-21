@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:context=".avoideddiabetessugar"
-    android:background="@drawable/new_login_gradients">
+    android:background="@drawable/bg4">
 
 
     <LinearLayout
@@ -35,15 +35,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="ILLNESS: DIABETES"
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="AVOIDED SUGAR"
-            android:textColor="#FFFF"
+            android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="18sp" />
 
@@ -55,21 +55,10 @@
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:alignmentMode="alignMargins"
                 android:columnCount="1"
                 android:columnOrderPreserved="false"
                 android:rowCount="200">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="90"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
 
 
                     <LinearLayout
@@ -84,7 +73,6 @@
                             android:layout_height="match_parent" />
 
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
             </GridLayout>
 

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:context=".avoideddiabetes"
-    android:background="@drawable/new_login_gradients">
+    android:background="@drawable/bg4">
 
 
     <LinearLayout
@@ -18,8 +18,8 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="670dp"
-            android:layout_height="160dp"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
             android:layout_gravity="center"
             android:padding="16dp"
             android:src="@drawable/logo3"
@@ -34,42 +34,58 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="ILLNESS:  DIABETES"
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:text="ILLNESS: DIABETES"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="AVOIDED FOOD"
-            android:textColor="#FFFF"
-            android:textStyle="bold"
-            android:textSize="18sp" />
+            android:text="AVOIDED FOOD "
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="10dp"
-            android:orientation="vertical">
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/buttonguidefood"
+                style="@style/Base.TextAppearance.AppCompat.Body1"
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:background="@drawable/background_login"
+                android:clickable="true"
+                android:padding="8dp"
+                android:text="Guide Meals/Day"
+                android:textAllCaps="false"
+                android:textColor="#f16f7d"
+                android:textSize="14sp"/>
 
             <Button
                 android:id="@+id/buttonfilter"
                 style="@style/Base.TextAppearance.AppCompat.Body1"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginRight="10dp"
                 android:background="@drawable/background_login"
                 android:clickable="true"
                 android:padding="8dp"
                 android:text="Filter Food Category"
                 android:textAllCaps="false"
                 android:textColor="#f16f7d"
-                android:textSize="14sp" />
+                android:textSize="14sp"/>
+
 
 
         </LinearLayout>
+
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -82,16 +98,21 @@
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false"
                 android:columnCount="1"
-                android:rowCount="200"
-                android:layout_marginTop="10dp">
+                android:rowCount="200">
 
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
 
-            <ListView
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                        <ListView
+                            android:id="@+id/listView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </LinearLayout>
 
             </GridLayout>
         </ScrollView>

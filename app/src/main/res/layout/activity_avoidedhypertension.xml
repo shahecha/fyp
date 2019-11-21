@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:context=".avoidedhypertension"
-    android:background="@drawable/new_login_gradients">
+    android:background="@drawable/bg4">
 
 
     <LinearLayout
@@ -15,11 +15,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="670dp"
-            android:layout_height="160dp"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
             android:layout_gravity="center"
             android:padding="16dp"
             android:src="@drawable/logo3"
@@ -31,12 +30,13 @@
 
 
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="ILLNESS: HYPERTENSION"
-            android:textColor="#FFFF"
+            android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="18sp" />
         <TextView
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="AVOIDED FOOD"
-            android:textColor="#FFFF"
+            android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="18sp" />
 
@@ -83,18 +83,7 @@
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false"
                 android:columnCount="1"
-                android:rowCount="200"
-                android:layout_marginTop="10dp">
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_rowWeight="90"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="10dp"
-                    app:cardCornerRadius="12dp"
-                    app:cardElevation="6dp">
+                android:rowCount="200">
 
 
                     <LinearLayout
@@ -109,7 +98,6 @@
                             android:layout_height="match_parent" />
 
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
 
             </GridLayout>
         </ScrollView>

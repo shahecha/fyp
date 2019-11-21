@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Tipsgout"
-    android:background="@drawable/new_login_gradients">
+    android:background="@drawable/bg4">
 
 
     <LinearLayout
@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:text="GOUT TIPS"
-                    android:textColor="#FFFF"
+                    android:textColor="#000000"
                     android:textStyle="bold"
                     android:textSize="18sp" />
 
