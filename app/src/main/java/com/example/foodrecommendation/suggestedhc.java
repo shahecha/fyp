@@ -95,7 +95,7 @@ public class suggestedhc extends AppCompatActivity {
             public void onClick(View view) {
                 listItems = new String[]{ "Grains", "Fruit", "Vegetable", "Protein","Fat","Legume","Others"};
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(suggestedhc.this);
-                mBuilder.setTitle("Food Recommendation Hyperlipidemia");
+                mBuilder.setTitle("Hyperlipidemia: suggested food");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i)

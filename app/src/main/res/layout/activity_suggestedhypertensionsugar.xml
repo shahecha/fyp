@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".suggestedhypertension"
+    tools:context=".suggestedhypertensionsugar"
     android:background="@drawable/bg4">
 
 
@@ -30,13 +30,11 @@
             app:layout_constraintVertical_bias="0.482" />
 
 
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="ILLNESS:  HYPERTENSION"
+            android:text="ILLNESS: HYPERTENSION"
             android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="18sp" />
@@ -44,79 +42,55 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="SUGGESTED FOOD"
+            android:text="SUGGESTED SUGAR"
             android:textColor="#000000"
             android:textStyle="bold"
             android:textSize="18sp" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp"
-            android:gravity="center_horizontal">
-
-            <Button
-                android:id="@+id/buttonguidefood"
-                style="@style/Base.TextAppearance.AppCompat.Body1"
-                android:layout_width="160dp"
-                android:layout_height="40dp"
-                android:background="@drawable/background_login"
-                android:clickable="true"
-                android:padding="8dp"
-                android:text="Guide Meals/Day"
-                android:textAllCaps="false"
-                android:textColor="#f16f7d"
-                android:textSize="14sp"/>
-
-            <Button
-                android:id="@+id/buttonfilter"
-                style="@style/Base.TextAppearance.AppCompat.Body1"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@drawable/background_login"
-                android:clickable="true"
-                android:padding="8dp"
-                android:text="Filter Food Category"
-                android:textAllCaps="false"
-                android:textColor="#f16f7d"
-                android:textSize="14sp"/>
-
-
-
-        </LinearLayout>
-
-
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="420dp"
             android:fillViewport="true">
 
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alignmentMode="alignMargins"
-                android:columnOrderPreserved="false"
                 android:columnCount="1"
+                android:columnOrderPreserved="false"
                 android:rowCount="200">
 
 
-                    <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <ListView
+                        android:id="@+id/listView"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_height="match_parent" />
 
-
-                        <ListView
-                            android:id="@+id/listView"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-
-                    </LinearLayout>
+                </LinearLayout>
 
             </GridLayout>
+
         </ScrollView>
+
+        <Button
+            android:id="@+id/btn_close"
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_width="100dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/background_login"
+            android:clickable="true"
+            android:padding="5dp"
+            android:text="Close"
+            android:textAllCaps="false"
+            android:textColor="#f16f7d"
+            android:textSize="18sp"
+            tools:ignore="MissingConstraints" />
     </LinearLayout>
 </LinearLayout>

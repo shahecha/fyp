@@ -83,9 +83,9 @@ public class avoidedhypertension extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listItems = new String[]{"Grains", "Fruit","Vegetable", "Protein", "Fat","Sugar","Dairy","Others"};
+                listItems = new String[]{"Grains", "Fruit","Vegetable", "Protein", "Fat","Dairy","Others"};
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(avoidedhypertension.this);
-                mBuilder.setTitle("Food Recommendation Hipertension");
+                mBuilder.setTitle("Hypertension: avoided food");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i)
@@ -123,16 +123,10 @@ public class avoidedhypertension extends AppCompatActivity {
                         if (i ==5)
                         {
 
-                            Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionsugar.class);
-                            startActivity(j);
-                        }
-                        if (i ==6)
-                        {
-
                             Intent j = new Intent(avoidedhypertension.this,avoidedhypertensiondairy.class);
                             startActivity(j);
                         }
-                        if (i ==7)
+                        if (i ==6)
                         {
 
                             Intent j = new Intent(avoidedhypertension.this,avoidedhypertensionothers.class);

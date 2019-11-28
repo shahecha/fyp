@@ -87,7 +87,7 @@ public class avoidedgout extends AppCompatActivity {
             public void onClick(View view) {
                 listItems = new String[]{ "Grains", "Vegetable", "Protein", "Legume","Others"};
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(avoidedgout.this);
-                mBuilder.setTitle("Food Recommendation Gout");
+                mBuilder.setTitle("Gout: avoided food");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i)

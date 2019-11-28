@@ -38,7 +38,7 @@ public class Illness extends AppCompatActivity {
             public void onClick(View v) {
                 listItems=new String[]{"Suggested food","Avoided food"};
                 final AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                mBuilder.setTitle("Food Recommendation Diabetes");
+                mBuilder.setTitle("Diabetes");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -74,7 +74,7 @@ public class Illness extends AppCompatActivity {
             public void onClick(View v) {
                 listItems=new String[]{"Suggested food","Avoided food"};
                 AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                mBuilder.setTitle(" Food Recommendation Hypertension");
+                mBuilder.setTitle("Hypertension");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -106,7 +106,7 @@ public class Illness extends AppCompatActivity {
             public void onClick(View v) {
                 listItems=new String[]{"Suggested food","Avoided food"};
                 AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                mBuilder.setTitle("Food Recommendation Hyperlipidemia");
+                mBuilder.setTitle("Hyperlipidemia");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -138,7 +138,7 @@ public class Illness extends AppCompatActivity {
             public void onClick(View v) {
                 listItems=new String[]{"Suggested food","Avoided food"};
                 AlertDialog.Builder mBuilder=new AlertDialog.Builder(Illness.this);
-                mBuilder.setTitle(" Food Recommendation Gout");
+                mBuilder.setTitle("Gout");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

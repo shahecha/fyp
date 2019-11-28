@@ -75,7 +75,7 @@ public class avoideddiabetes extends AppCompatActivity {
             public void onClick(View view) {
                 listItems = new String[]{"Vegetable", "Fat", "Sugar"};
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(avoideddiabetes.this);
-                mBuilder.setTitle("Food Recommendation Diabetes");
+                mBuilder.setTitle("Diabetes: avoided food");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i)
