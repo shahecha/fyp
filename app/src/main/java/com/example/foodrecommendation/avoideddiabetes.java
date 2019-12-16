@@ -24,19 +24,16 @@ public class avoideddiabetes extends AppCompatActivity {
 
     Button button;
     ListView lv;
+    String[] listItems;
+
     FirebaseListAdapter adapter;
     FoodAdapter adapterFood;
     private DatabaseReference query;
-
-
-    String[] listItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avoideddiabetes);
-
-
 
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
@@ -68,6 +65,8 @@ public class avoideddiabetes extends AppCompatActivity {
 
             }
         });
+
+
 
         button = findViewById(R.id.buttonfilter);
         button.setOnClickListener(new View.OnClickListener() {

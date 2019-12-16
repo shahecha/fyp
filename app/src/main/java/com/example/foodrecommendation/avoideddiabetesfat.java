@@ -48,7 +48,6 @@ public class avoideddiabetesfat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avoideddiabetesfat);
 
-
         btn_close=(Button)findViewById(R.id.btn_close);
         btn_close.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +69,6 @@ public class avoideddiabetesfat extends AppCompatActivity {
         params.gravity= Gravity.CENTER;
         params.x=0;
         params.y=-20;
-
         getWindow().setAttributes(params);
 
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
