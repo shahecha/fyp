@@ -53,7 +53,7 @@ public class suggestedhc extends AppCompatActivity {
         btn_sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(suggestedhc.this,Popsugesteddiabetes.class);
+                Intent i=new Intent(suggestedhc.this,Popsuggestedhc.class);
                 startActivity(i);
             }
         });

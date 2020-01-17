@@ -53,7 +53,7 @@ public class suggestedhypertension extends AppCompatActivity {
         btn_sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(suggestedhypertension.this,Popsugesteddiabetes.class);
+                Intent i=new Intent(suggestedhypertension.this,Popsugestedhypertension.class);
                 startActivity(i);
             }
         });
@@ -93,7 +93,7 @@ public class suggestedhypertension extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listItems = new String[]{ "Grains", "Fruit", "Vegetable", "Protein","Sugar","Fat","Legume","Others"};
+                listItems = new String[]{ "Grains", "Fruit", "Vegetable", "Protein","Sugar","Dairy","Legume","Others"};
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(suggestedhypertension.this);
                 mBuilder.setTitle("Hypertension: suggested food");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {

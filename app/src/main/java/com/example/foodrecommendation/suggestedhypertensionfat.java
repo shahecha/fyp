@@ -75,7 +75,7 @@ public class suggestedhypertensionfat extends AppCompatActivity {
 
         final ArrayList<foodconst> snapshotListData =  new ArrayList<>();
 
-        FirebaseDatabase.getInstance().getReference().child("hipertension").child("suggested").child("fat").addValueEventListener(new ValueEventListener(){
+        FirebaseDatabase.getInstance().getReference().child("hipertension").child("suggested").child("dairy").addValueEventListener(new ValueEventListener(){
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {

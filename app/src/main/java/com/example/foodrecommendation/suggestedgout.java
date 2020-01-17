@@ -53,7 +53,7 @@ public class suggestedgout extends AppCompatActivity {
         btn_sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(suggestedgout.this,Popsugesteddiabetes.class);
+                Intent i=new Intent(suggestedgout.this,Popsugestedgout.class);
                 startActivity(i);
             }
         });
@@ -93,7 +93,7 @@ public class suggestedgout extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listItems = new String[]{"Grains", "Fruit", "Vegetable", "Protein", "Fat","Dairy"};
+                listItems = new String[]{"Grains", "Fruit", "Protein", "Fat","Dairy"};
                 final AlertDialog.Builder mBuilder = new AlertDialog.Builder(suggestedgout.this);
                 mBuilder.setTitle("Gout: suggested food");
                 mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
@@ -112,27 +112,21 @@ public class suggestedgout extends AppCompatActivity {
                             Intent j = new Intent(suggestedgout.this,suggestedgoutfruit.class);
                             startActivity(j);
                         }
+
                         if (i == 2)
-                        {
-
-                            Intent j = new Intent(suggestedgout.this,suggestedgoutvegetables.class);
-                            startActivity(j);
-                        }
-
-                        if (i == 3)
                         {
 
                             Intent j = new Intent(suggestedgout.this,suggestedgoutprotein.class);
                             startActivity(j);
                         }
-                        if (i == 4)
+                        if (i == 3)
                         {
 
                             Intent j = new Intent(suggestedgout.this,suggestedgoutfat.class);
                             startActivity(j);
                         }
 
-                        if (i == 5)
+                        if (i == 4)
                         {
 
                             Intent j = new Intent(suggestedgout.this,suggestedgoutdairy.class);
