@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/maintest">
+    android:background="@drawable/picmainpage1">
 
 
     <LinearLayout
@@ -17,40 +17,38 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:layout_marginTop="20dp">
+            android:layout_height="match_parent"
+            android:fillViewport="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="380dp">
+                android:gravity="center"
+                android:orientation="vertical">
+
 
                 <Button
                     android:id="@+id/continueBtn"
                     style="@style/Base.TextAppearance.AppCompat.Body1"
-                    android:layout_width="206dp"
-                    android:layout_height="40dp"
+                    android:layout_width="130dp"
+                    android:layout_height="36dp"
                     android:layout_gravity="center"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="340dp"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginRight="30dp"
                     android:background="@drawable/background_login"
                     android:clickable="true"
                     android:padding="8dp"
                     android:text="Continue"
                     android:textAllCaps="false"
                     android:textColor="#f16f7d"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.493"
                     app:layout_constraintStart_toStartOf="parent" />
-
-
 
 
             </LinearLayout>

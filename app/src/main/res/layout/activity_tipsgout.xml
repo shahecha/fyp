@@ -52,7 +52,7 @@
                 <com.zolad.zoominimageview.ZoomInImageView
                     android:layout_width="match_parent"
                     android:layout_height="223dp"
-                    android:src="@drawable/picture1"
+                    android:src="@drawable/gouttips"
                     android:layout_marginTop="10dp"/>
 
                 <!--   <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView

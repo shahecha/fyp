@@ -24,7 +24,7 @@
         <com.zolad.zoominimageview.ZoomInImageView
             android:layout_width="match_parent"
             android:layout_height="223dp"
-            android:src="@drawable/h1"/>
+            android:src="@drawable/guidemealhypertension"/>
 
         <Button
             android:id="@+id/btn_close"
