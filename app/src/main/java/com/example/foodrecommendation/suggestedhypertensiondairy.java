@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class suggestedhypertensionfat extends AppCompatActivity {
+public class suggestedhypertensiondairy extends AppCompatActivity {
 
     ListView lv;
     FirebaseListAdapter adapter;
@@ -46,7 +46,7 @@ public class suggestedhypertensionfat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_suggestedhypertensionfat);
+        setContentView(R.layout.activity_suggestedhypertensiondairy);
 
 
         btn_close=(Button)findViewById(R.id.btn_close);

@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".suggestedhypertensionsugar"></activity>
+        <activity android:name=".suggestedhypertensiondairy"></activity>
+        <activity android:name=".suggestedhypertensionsugar" />
         <activity android:name=".suggestedhcvegetables" />
         <activity android:name=".suggestedhypertensionothers" />
         <activity android:name=".suggestedhypertensionlegume" />

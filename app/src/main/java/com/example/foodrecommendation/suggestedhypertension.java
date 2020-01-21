@@ -134,7 +134,7 @@ public class suggestedhypertension extends AppCompatActivity {
                         if (i == 5)
                         {
 
-                            Intent j = new Intent(suggestedhypertension.this,suggestedhypertensionfat.class);
+                            Intent j = new Intent(suggestedhypertension.this,suggestedhypertensiondairy.class);
                             startActivity(j);
                         }
 
